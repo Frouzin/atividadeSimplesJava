@@ -1,5 +1,7 @@
 package AtividadeSemPOO;
 
+import entities.Triangle;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -8,23 +10,26 @@ public class Application {
         public static void main (String[] args){
             Locale.setDefault(Locale.US);
             Scanner scan = new Scanner(System.in);
-            double xA, xB, xC,yA, yB, yC;
+
+            Triangle x,y;
+            x = new Triangle();
+            y = new Triangle();
 
             System.out.println("Enter the measures of triangle X: ");
-            xA = scan.nextDouble();
-            xB = scan.nextDouble();
-            xC = scan.nextDouble();
+            x.a = scan.nextDouble();
+            x.b = scan.nextDouble();
+            x.c = scan.nextDouble();
 
             System.out.println("Enter the measures of triangle Y: ");
-            yA = scan.nextDouble();
-            yB = scan.nextDouble();
-            yC = scan.nextDouble();
+            y.a = scan.nextDouble();
+            y.b = scan.nextDouble();
+            y.c = scan.nextDouble();
 
-            double p = (xA+xB+xC)/2.0;
-            double areax = Math.sqrt(p*(p-xA)*(p-xB)*(p-xC));
+            double p = (x.a+x.b+x.c)/2.0;
+            double areax = Math.sqrt(p*(p- x.a)*(p-x.b)*(p-x.c));
 
-            p = (yA+yB+yC)/2.0;
-            double areay = Math.sqrt(p*(p-yA)*(p-yB)*(p-yC));
+            p = (y.a+y.b+y.c)/2.0;
+            double areay = Math.sqrt(p*(p-y.a)*(p-y.b)*(p-y.c));
 
             System.out.printf("Triangle X area: %.4f%n", areax);
             System.out.printf("Triangle Y area: %.4f%n", areay);
